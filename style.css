@@ -2,8 +2,8 @@ body {
     background-color: #2e204b;
     color: #fff;
     font-family: Roboto, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 10;
 }
 
 .container{
@@ -16,6 +16,11 @@ body {
 
 h1{
     text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-size: 20px;
 }
 
 input{
