@@ -13,6 +13,8 @@
 
 </head>
 <body>
+    
+
     <div class = "container">
         <h1>AFD</h1>
         <h2> Entrada dos estados devem ser:
@@ -22,14 +24,23 @@
         <input type="text" id ="conjuntoEstadosInput" placeholder="Digite o conjunto de estados separado por vírgula">
         <button onclick="addEstado()">Adicionar</button>
         <ul id="conjuntoEstados"></ul>
-    </div>
+        <button onclick="mostrarLista()">Mostrar Lista no Console</button>
 
-    <script src="script.js"></script>
+    </div>    
+
+    <div class = "container">
+        <h1>ALFABETO</h1>
+        <h2> Entrada do alfabeto deve ser:
+        <br> para cada símbolo do alfabeto digite {a,}, {b,}...
+     </h2>
+        <input type="text" id ="conjuntoAlfabetoInput" placeholder="Digite o conjunto do alfabeto separado por vírgula">
+        <button onclick="addAlfabeto()">Adicionar</button>
+        <ul id="conjuntoAlfabeto"></ul>
+        <button onclick="mostrarListaAlfabeto()">Mostrar Alfabeto no Console</button>
+
+        <script src="script.js"></script>
     
 </body>
-<body>
-    <div class = "container">
-        <button onclick="mostrarLista()">Mostrar Lista no Console</button>
-    </div>
+
 </body>
 </html>
