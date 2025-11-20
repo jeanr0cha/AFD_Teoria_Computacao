@@ -1,46 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-    
+<html lang="pt-br">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Automato Finito Determinístico</title>
-    
-
-
+    <title>Autômato Finito Não Determinístico (AFN)</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
 <body>
-    
-
-    <div class = "container">
-        <h1>AFD</h1>
-        <h2> Entrada dos estados devem ser:
-        <br> para estado inicial digite {q0,} e estado final ditite {qf,}
-        <br> demais estados digite {q1,}, {q2,}...
-     </h2>
-        <input type="text" id ="conjuntoEstadosInput" placeholder="Digite o conjunto de estados separado por vírgula">
+    <div class="container">
+        <h1>CONJUNTO DE ESTADOS</h1>
+        <h2>
+            Digite os estados separados por vírgula:<br>            
+            Ex.: q0, 1, q2, qf ...
+        </h2>
+        <input type="text" id="conjuntoEstadosInput" placeholder="Digite os estados separados por vírgula">
         <button onclick="addEstado()">Adicionar</button>
         <ul id="conjuntoEstados"></ul>
         <button onclick="mostrarLista()">Mostrar Lista no Console</button>
-
-    </div>    
-
-    <div class = "container">
+    </div>
+    <div class="container">
         <h1>ALFABETO</h1>
-        <h2> Entrada do alfabeto deve ser:
-        <br> para cada símbolo do alfabeto digite {a,}, {b,}...
-     </h2>
-        <input type="text" id ="conjuntoAlfabetoInput" placeholder="Digite o conjunto do alfabeto separado por vírgula">
+        <h2>
+            Digite os símbolos do alfabeto separados por vírgula:<br>            
+            Ex.: a, b, 0, 1 ...<br>
+            OBS: Se for estado fazio digite "vazio" <br>
+            Ex.: a, b, vazio<br>
+
+        </h2>
+        <input type="text" id="conjuntoAlfabetoInput" placeholder="Digite o alfabeto separado por vírgula">
         <button onclick="addAlfabeto()">Adicionar</button>
         <ul id="conjuntoAlfabeto"></ul>
         <button onclick="mostrarListaAlfabeto()">Mostrar Alfabeto no Console</button>
-
-        <script src="script.js"></script>
-    
-</body>
-
+    </div>
+    <div class="container">
+        <h1>FUNÇÃO DE TRANSIÇÃO (δ)</h1>
+        <h2>
+            Para cada par (estado, símbolo), selecione os estados de destino (pode mais de um ou nenhum).
+        </h2>
+        <button onclick="gerarTabelaTransicao()">Gerar Tabela de Transição</button>
+        <div id="tabelaTransicaoContainer"></div>
+        <button id="salvarTransicoesBtn" style="display:none;" onclick="salvarTransicoes()">Salvar Transições</button>
+    </div>
+    <div class="container">
+        <h1>Diagrama do Autômato</h1>
+        <label for="estadoInicialInput">Estado Inicial:</label>
+        <input type="text" id="estadoInicialInput" placeholder="q0"><br>
+        <label for="estadosFinaisInput">Estados Finais (separados por vírgula):</label>
+        <input type="text" id="estadosFinaisInput" placeholder="qf, q2">
+        <button onclick="desenharAutomatoSimples()">Desenhar Autômato</button>
+        <div id="diagramaContainer" class="mermaid"></div>
+    </div>
+    <div class="container">
+        <h1>Simulação de Cadeia</h1>
+        <input type="text" id="inputCadeia" placeholder="Ex: abab">
+        <button onclick="testarCadeia()">Testar Cadeia</button>
+        <div id="resultadoCadeia"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

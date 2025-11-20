@@ -6,34 +6,29 @@ body {
     padding: 10;
 }
 
-.container{
+.container {
     max-width: 500px;
-    margin: 30 px auto;
-    padding: 20 px;
-    background-color: #3f2b68;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #4b4b4d;
     border-radius: 10px;
 }
 
-h1{
-    text-align: center;
+h1 {
+    text-align: left;
 }
-
-h2{
-    text-align: center;
+h2 {
+    text-align: left;
     font-size: 20px;
 }
-
-input{
+input {
     width: 80%;
     padding: 8px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    align-items: center;
-    justify-content: center;
 }
-
-button{
+button {
     padding: 8px 16px;
     font-size: 16px;
     background-color: #563d91;
@@ -43,13 +38,11 @@ button{
     cursor: pointer;
     margin-top: 10px;
 }
-
-ul{
+ul {
     list-style-type: none;
-    padding: 0;    
+    padding: 0;
 }
-
-li{
+li {
     padding: 10px;
     background-color: #66428f;
     margin-bottom: 5px;
@@ -57,17 +50,59 @@ li{
     display: flex;
     justify-content: space-between;
 }
-
-li.hover{
+li:hover {
     background-color: #9e7cc4;
 }
-
-li span{
+li span {
     flex-grow: 1;
     align-self: left;
 }
-
-.deletebutton{
+.deletebutton {
     margin-left: 5px;
 }
-
+.state-node {
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+}
+.state-circle {
+    fill: #2e204b;
+    stroke: #9e7cc4;
+    stroke-width: 2;
+}
+.state-text {
+    fill: #fff;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+    alignment-baseline: middle;
+}
+.state-node:hover .state-circle {
+    fill: #4a3375;
+    cursor: pointer;
+}
+.transition-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.transition-table th,
+.transition-table td {
+    border: 1px solid #9e7cc4;
+    padding: 8px;
+}
+.transition-table th {
+    background-color: #563d91;
+    font-size: 1.2em;
+}
+.transition-select {
+    width: 100%;
+    background-color: #2e204b;
+    color: #fff;
+    border: 1px solid #9e7cc4;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 1em;
+}
